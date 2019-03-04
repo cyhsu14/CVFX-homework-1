@@ -1,5 +1,5 @@
 # Computer Vision for Visual Effects Homework 1 
-**Team 8**  
+**Team 7**  
 104062329 王心瑩  
 104060002 陳家昕  
 104060014 許瀞予  
