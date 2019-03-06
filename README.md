@@ -146,7 +146,7 @@ plt.imshow(winter.filter(ImageFilter.MedianFilter).filter(ImageFilter.SHARPEN))
 ```
 <img src="./img/method2_inverse_result.png" width="600px" />  
 
-## 4.兩種做法成果之分析比較
+## 兩種做法成果之分析比較
 
 ### summer to winter
 
@@ -165,7 +165,7 @@ plt.imshow(winter.filter(ImageFilter.MedianFilter).filter(ImageFilter.SHARPEN))
 
 由上圖可看出，經cycleGAN轉換後的圖片清晰度較差，而在夏天景色的擬真程度上，cycleGAN方法明顯勝過我們的做法，它會在圖中出現一些綠色的部分讓人感覺較像夏天，雖然轉成綠色的部分不一定正確(例如第三種圖的橋就變成綠色了)，但我們的做法就看不太出有夏天的感覺。
 
-## 5.結論
+## 結論
 
 雖然cycleGAN在training過程十分耗時耗資源，但在兩種方向轉換的整體品質上都較穩定，而我們的做法雖然較快速又不耗資源，但只有在summer to winter方向上成果較好。
 
