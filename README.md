@@ -37,7 +37,7 @@ After changing the photo size to 256x256, I create my own dataset and run the te
 
 #### 詳細步驟
 1. 先把原圖的G channel複製一份出來
-2. 將複製後的G channel圖加上失真的Diffuse glow blur，這樣除了積雪，還會看起來有一些飄雪
+2. 將複製後的G channel圖做Gaussian blur，這樣除了積雪，還會看起來有一些飄雪
 3. 將上一步blur後的圖調整其透明度為50%，並和原圖blend在一起，讓原圖原本的顏色可以比較透出來
 4. 接著要製作飄雪，先產生一張跟原圖size相同的Gaussian noise圖
 5. 將上一步的noise圖做Gaussian blur
@@ -68,7 +68,7 @@ plt.imshow(G, cmap='gray')
 
 <img src="./img/_1.jpg" width="300px" />
 
-**步驟二**：將複製後的G channel圖加上失真的Diffuse glow blur，這樣除了積雪，還會看起來有一些飄雪
+**步驟二**：將複製後的G channel圖做Gaussian blur，這樣除了積雪，還會看起來有一些飄雪
 
 ```
 from PIL import ImageFilter
@@ -88,7 +88,7 @@ plt.imshow(newImg)
 
 <img src="./img/_3.jpg" width="300px" />
 
-**步驟四**：接著要製作飄雪，先產生一張跟原圖size相同的Gaussian noise圖)
+**步驟四**：接著要製作飄雪，先產生一張跟原圖size相同的Gaussian noise圖
 
 ```
 noise = np.random.normal(110, 50, GImg.size)
