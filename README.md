@@ -24,7 +24,7 @@ After changing the photo size to 256x256, I create my own dataset and run the te
 <img src="./img/myphoto_winter1.png" width="400px" />  
 <img src="./img/myphoto_winter2.png" width="400px" />  
 
-## 3.其他做法：
+## 3.我們的做法：
 我們主要參考Photoshop這篇教學的做法:
 
 [Photoshop Tutorial: How to Quickly Transform Summer into Winter](https://www.youtube.com/watch?v=T1qW0uAt5jw)
