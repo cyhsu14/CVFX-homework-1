@@ -16,7 +16,7 @@ The dataset we use is summer2winter_yosemite, and it took about 40 hours to fini
 
 
 #### 2. Inference cycleGAN in personal image
-After changing the photo size to 256x256, I create my own dataset and run the testing command. The first image is to switch summer to winter, second and third one is winter to summer.  
+After changing the photo size to 256x256, I create my own dataset and run the testing command. The first 3 images are switching summer to winter, the last three are winter to summer.  
 <img src="./img/myphoto_summer.png" width="400px" />  
 <img src="./img/1_2.png" width="400px" />  
 <img src="./img/2_2.png" width="400px" />  
