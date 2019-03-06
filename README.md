@@ -36,6 +36,8 @@ After changing the photo size to 256x256, I create my own dataset and run the te
 <img src="./img/method2_result.png" width="600px" />  
 
 #### 詳細步驟
+根據影片內容，把 Summer2winter拆解成以下步驟：
+
 1. 先把原圖的G channel複製一份出來
 2. 將複製後的G channel圖做Gaussian blur，這樣除了積雪，還會看起來有一些飄雪
 3. 將上一步blur後的圖調整其透明度為50%，並和原圖blend在一起，讓原圖原本的顏色可以比較透出來
@@ -117,7 +119,7 @@ plt.imshow(noise)
 
 <img src="./img/_6.jpg" width="300px" />
 
-**步驟七**：接著再blur一次
+**步驟七**：接著再blur一次，讓雪的邊緣不要太銳利
 
 ```
 noiseImg = Image.fromarray(noise).convert('RGB').filter(ImageFilter.GaussianBlur(radius=.5)).convert('L')
@@ -138,7 +140,13 @@ plt.imshow(newImg)
 
 ### winter to summer
 
-在Photoshop的方法中，要反過來做winter to summer是極為困難的，因為白色區域有可能是天空、水或是雪，難以清楚分辨，也難從個別顏色channel中去找，因此這塊我們目前只能用一些image filter來做，如圖。
+在Photoshop的方法中，要反過來做winter to summer是極為困難的，因為白色區域有可能是天空、水或是雪，難以清楚分辨，也難從個別顏色channel中去找，因此目前只使用Median Filter來處理飄雪、增強彩度跟對比來營造出夏天的感覺。此方法對本身沒有飄雪、彩度或對比本來就很強的冬天圖片並沒有太大的用處。用在以夏天照片產生的冬天飄雪照片上也沒能精準還原，這是因為用Median Filter去飄雪必須付出的代價就是輸出影像模糊，這是我們使用的這個方法的極限。
+
+步驟大略如下
+
+1. 對影像用一次size為3的Median Filter，如此可以弱化飄雪
+2. 對剛剛的結果用一次PIL預設的SHARPEN Filter，稍微彌補剛剛被模糊的效果
+3. 對影像加強色彩後加強對比
 
 ```
 winter = Image.open('C:/Users/singi/OneDrive/桌面/4.jpg')
